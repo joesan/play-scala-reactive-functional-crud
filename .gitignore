@@ -1,0 +1,7 @@
+*.idea
+*.ipr
+*.iml
+/target/*
+*.log*
+/logs/*
+*.class
