@@ -1,10 +1,9 @@
-# Play API REST with Monix Observables [Play 2.5 - Scala]
+# play-scala-reactive-functional-crud
+A reactive CRUD web application that demonstrates pure functional data types
 
-Template to show how to implement a WebSocket Streaming API using Play Framework and Monix.
-
-# Running the Application
-
-1. Navigate to the project on your command line
-2. sbt run
-3. Open a WebSocket client on your browser [Chrome has a Simple WebSocket Client plugin]
-4. ws://localhost:9000/observable
+1. Use ADT to define the domain model
+2. Keep side effecting behaviors to the edge
+3. Embrace asynchrony as much as possible
+4. Support multi database paradigm
+5. Expose application metrics as part of the API
+6. Demonstrate "Streaming capabilities" - I'm using the Monix library
