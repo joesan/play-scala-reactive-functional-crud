@@ -1,20 +1,19 @@
-package my.samples.services
+package com.inland24.crud.services
 
 import com.typesafe.scalalogging.LazyLogging
 import monix.execution.atomic.AtomicBoolean
 
-final class ZombieConnectorService extends LazyLogging {
+object ZombieConnectorService extends LazyLogging {
 
   private[this] val connectionStatus = AtomicBoolean(false)
 
-  def connect() =
+  def connect(): Unit = {
     logger.info(s"ZombieConnectorService connection status = ${connectionStatus.get}")
-  connectionStatus.compareAndSet(expect = false, update = true)
+    connectionStatus.compareAndSet(expect = false, update = true)
+  }
 
-  def disconnect() =
+  def disconnect(): Unit = {
     logger.info(s"ZombieConnectorService connection status = ${connectionStatus.get}")
-  connectionStatus.compareAndSet(expect = true, update = false)
-}
-object ZombieConnectorService {
-  def apply = new ZombieConnectorService
+    connectionStatus.compareAndSet(expect = true, update = false)
+  }
 }

@@ -13,7 +13,7 @@ class OrganizationDBService(val dbConfig: DBConfig)(implicit ec: ExecutionContex
   private val schema = DBSchema(dbConfig.slickDriver)
   private val database = dbConfig.database
 
-  /** Note: These imports should be here! Do not move it  */
+  /** Note: These imports should be here! Do not move it */
   import schema._
   import schema.driver.api._
 
