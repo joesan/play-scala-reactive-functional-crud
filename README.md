@@ -1,3 +1,5 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b5c97d3331924fc59849218234125abc)](https://www.codacy.com/app/joesan/play-scala-reactive-functional-crud?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=joesan/play-scala-reactive-functional-crud&amp;utm_campaign=Badge_Grade)
+
 # play-scala-reactive-functional-crud
 A reactive CRUD web application that demonstrates pure functional data types
 
