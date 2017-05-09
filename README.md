@@ -1,4 +1,7 @@
 # play-scala-reactive-functional-crud
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b5c97d3331924fc59849218234125abc)](https://www.codacy.com/app/joesan/play-scala-reactive-functional-crud?utm_source=github.com&utm_medium=referral&utm_content=joesan/play-scala-reactive-functional-crud&utm_campaign=badger)
+
 A reactive CRUD web application that demonstrates pure functional data types
 
 1. Use ADT to define the domain model
