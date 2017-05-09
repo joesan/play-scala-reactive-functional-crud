@@ -49,5 +49,7 @@ doc in Compile <<= target.map(_ / "none")
 libraryDependencies ++= Seq(
   ws,
   "io.monix" %% "monix" % "2.1.0",
-  "com.typesafe.scala-logging" %% "scala-logging" % "3.4.0"
+  "com.typesafe.slick" %% "slick" % "3.2.0",
+  "com.typesafe.scala-logging" %% "scala-logging" % "3.4.0",
+  "org.scala-lang.modules" % "scala-async_2.11" % "0.9.6"
 )
