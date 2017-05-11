@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-package my.samples.models
+package com.inland24.crud.services.database.models
 
-sealed trait MyMessages
+/**
+  * Created by jothi on 11.05.17.
+  */
+class Meter {
 
-object MyMessages {
-  case object Init extends MyMessages
-  case object Destroy extends MyMessages
-  case class Tick(source: String, long: Long) extends MyMessages
 }
