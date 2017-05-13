@@ -16,9 +16,13 @@
 
 package com.inland24.crud.services.database.models
 
-/**
-  * Created by jothi on 11.05.17.
-  */
-class Meter {
 
-}
+case class MeterRow(
+  meterId: String,
+  orgId: Int,
+  meterType: MeterType
+)
+
+sealed trait MeterType
+case object SmartMeter extends MeterType
+case object ShitMeter  extends MeterType
