@@ -18,7 +18,7 @@ package com.inland24.crud.services.database
 
 import java.sql.Timestamp
 
-import com.inland24.crud.services.database.models.{AddressRow, OrganizationRow}
+import com.inland24.crud.services.database.models.{AddressRow, MeterRow, MeterType, OrganizationRow}
 import org.joda.time.{DateTime, DateTimeZone}
 import slick.jdbc.JdbcProfile
 
@@ -90,6 +90,30 @@ final class DBSchema private (val driver: JdbcProfile) {
     def * = {
       (id, streetNum, street, city, plz, country) <>
         (AddressRow.tupled, AddressRow.unapply)
+    }
+  }
+
+  object AddressTable {
+
+    val all = TableQuery[AddressTable]
+
+    val addressById = (id: Int) => {
+      all.filter(_.id === id)
+    }
+  }
+
+  ///////////////// Meter Table
+  /**
+    * The Meter details are maintained in the Meter table
+    */
+  class MeterTable(tag: Tag) extends Table[MeterRow](tag, "meter") {
+    def id        = column[Int]("id", O.PrimaryKey, O.AutoInc)
+    def orgId     = column[Int]("streetNum")
+    def meterType = column[MeterType]("meterType")
+
+    def * = {
+      (id, orgId, meterType) <>
+        (MeterRow.tupled, MeterRow.unapply)
     }
   }
 
