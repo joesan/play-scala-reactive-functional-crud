@@ -3,13 +3,13 @@
 # ~~~~
 
 # TEST PAGE
-GET			/							my.samples.controllers.MyApplicationController.home
+GET			/							com.inland24.crud.controllers.MyApplicationController.home
 
 # MyObservable
-GET			/observable					my.samples.controllers.MyApplicationController.observable
+GET			/observable					com.inland24.crud.controllers.MyApplicationController.observable
 
 # MyConnectableObservable
-GET			/connectableObservable		my.samples.controllers.MyApplicationController.connectableObservable
+GET			/connectableObservable		com.inland24.crud.controllers.MyApplicationController.connectableObservable
 
 # Map static resources from the /public folder to the /assets URL path
 GET			/assets/*file				controllers.Assets.versioned(path="/public", file: Asset)

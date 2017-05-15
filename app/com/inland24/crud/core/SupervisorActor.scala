@@ -14,19 +14,21 @@
  * limitations under the License.
  */
 
-package my.samples.core
+package com.inland24.crud.core
 
-import akka.actor.{ Actor, Props }
+import akka.actor.{Actor, Props}
+import com.inland24.crud.models.MyMessages.{Destroy, Init, Tick}
+import com.inland24.crud.observables.{MyConnectableObservable, MyObservable}
+import com.inland24.crud.observers.MyObserver
+import com.inland24.crud.services.ZombieConnectorService
 import com.typesafe.scalalogging.LazyLogging
 import monix.execution.Scheduler
 import monix.execution.cancelables.CompositeCancelable
 import monix.reactive.observables.ConnectableObservable
-import my.samples.observables.{ MyConnectableObservable, MyObservable }
-import my.samples.observers.MyObserver
-import my.samples.models.MyMessages.{ Destroy, Init, Tick }
-import my.samples.services.ZombieConnectorService
 
-class SupervisorActor(globalChannel: GlobalOutputChannel)(implicit s: Scheduler) extends Actor with LazyLogging {
+
+class SupervisorActor(globalChannel: GlobalOutputChannel)(implicit s: Scheduler)
+  extends Actor with LazyLogging {
 
   private[this] val subscriptions = CompositeCancelable()
 

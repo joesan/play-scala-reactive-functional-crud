@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package my.samples.models
+package com.inland24.crud.models
 
 sealed trait MyMessages
 

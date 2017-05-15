@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package my.samples.observables
+package com.inland24.crud.observables
 
 import com.typesafe.scalalogging.LazyLogging
 import monix.execution.{ Cancelable, Scheduler }
@@ -22,11 +22,13 @@ import monix.execution.cancelables.{ BooleanCancelable, SingleAssignmentCancelab
 import monix.reactive.Observable
 import monix.reactive.observables.ConnectableObservable
 import monix.reactive.observers.Subscriber
-import my.samples.services.ZombieConnectorService
+import com.inland24.crud.services.ZombieConnectorService
 
 import scala.concurrent.duration._
 
-class MyConnectableObservable(service: ZombieConnectorService)(implicit s: Scheduler) extends ConnectableObservable[Long] with LazyLogging {
+
+class MyConnectableObservable(service: ZombieConnectorService)(implicit s: Scheduler)
+  extends ConnectableObservable[Long] with LazyLogging {
 
   private[this] val connection = SingleAssignmentCancelable()
   private val serviceName = service.getClass.getName

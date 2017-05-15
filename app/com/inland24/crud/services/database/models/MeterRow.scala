@@ -23,6 +23,24 @@ case class MeterRow(
   meterType: MeterType
 )
 
-sealed trait MeterType
-case object SmartMeter extends MeterType
-case object ShitMeter  extends MeterType
+sealed trait MeterType { def toString: String }
+case object SmartMeter extends MeterType { override def toString = "SmartMeter" }
+case object ShitMeter  extends MeterType { override def toString = "ShitMeter"  }
+case object Unknown    extends MeterType { override def toString = "Unknown"    }
+
+object MeterType {
+
+  val allMeters = Vector(SmartMeter, ShitMeter)
+
+  // this function will take in a MeterType and return a String
+  def toString(meterType: MeterType): String = {
+    allMeters.find(_.toString.toLowerCase == meterType.toString)
+      .getOrElse(Unknown.toString)
+      .toString
+  }
+
+  def toMeterType(str: String): MeterType = {
+    allMeters.find(_.toString.toLowerCase == str)
+     .getOrElse(Unknown)
+  }
+}

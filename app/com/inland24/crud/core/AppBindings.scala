@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package my.samples.core
+package com.inland24.crud.core
 
 import akka.actor.{ ActorRef, ActorSystem }
 import akka.stream.Materializer

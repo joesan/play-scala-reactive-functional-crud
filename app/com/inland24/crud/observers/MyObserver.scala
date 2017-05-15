@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package my.samples.observers
+package com.inland24.crud.observers
 
 import akka.actor.ActorRef
+import com.inland24.crud.models.MyMessages.Tick
 import monix.execution.Ack.Continue
-import monix.execution.{ Ack, Scheduler }
+import monix.execution.{Ack, Scheduler}
 import monix.reactive.observers.Subscriber
-import my.samples.models.MyMessages
-import my.samples.models.MyMessages.Tick
 import org.slf4j.LoggerFactory
 
 import scala.concurrent.Future
+
 
 class MyObserver(actorRef: ActorRef, sourceName: String)(implicit s: Scheduler) extends Subscriber[Long] {
 

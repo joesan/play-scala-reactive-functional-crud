@@ -35,6 +35,14 @@ final class DBSchema private (val driver: JdbcProfile) {
     ts => new DateTime(ts.getTime, DateTimeZone.UTC)
   )
 
+  /**
+    * Mapping for using MeterType conversions.
+    */
+  implicit def meterTypeMapping = MappedColumnType.base[MeterType, String](
+    meterType    => MeterType.toString(meterType),
+    meterTypeStr => MeterType.toMeterType(meterTypeStr)
+  )
+
   ///////////////// Organization Table
   /**
     * The Organization details are maintained in the organization table
@@ -107,7 +115,7 @@ final class DBSchema private (val driver: JdbcProfile) {
     * The Meter details are maintained in the Meter table
     */
   class MeterTable(tag: Tag) extends Table[MeterRow](tag, "meter") {
-    def id        = column[Int]("id", O.PrimaryKey, O.AutoInc)
+    def id        = column[String]("id", O.PrimaryKey, O.AutoInc)
     def orgId     = column[Int]("streetNum")
     def meterType = column[MeterType]("meterType")
 
@@ -117,11 +125,11 @@ final class DBSchema private (val driver: JdbcProfile) {
     }
   }
 
-  object AddressTable {
+  object MeterTable {
 
-    val all = TableQuery[AddressTable]
+    val all = TableQuery[MeterTable]
 
-    val addressById = (id: Int) => {
+    val meterById = (id: String) => {
       all.filter(_.id === id)
     }
   }

@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package my.samples.core
+package com.inland24.crud.core
 
+import com.inland24.crud.models.MyMessages
 import monix.execution.Cancelable
 import monix.reactive.OverflowStrategy.Unbounded
 import monix.reactive.observers.Subscriber
 import monix.reactive.subjects.ConcurrentSubject
-import my.samples.models.MyMessages
+
 
 class GlobalOutputChannel {
   implicit val s = monix.execution.Scheduler.Implicits.global

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package my.samples.observables
+package com.inland24.crud.observables
 
 import monix.execution.Cancelable
 import monix.reactive.Observable

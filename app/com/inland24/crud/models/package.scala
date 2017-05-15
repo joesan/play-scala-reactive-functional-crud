@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-package my.samples
+package com.inland24.crud
 
-import my.samples.models.MyMessages.{ Destroy, Init, Tick }
+import com.inland24.crud.models.MyMessages.{Destroy, Init, Tick}
 import play.api.libs.json._
+
 
 package object models {
 

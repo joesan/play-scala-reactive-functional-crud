@@ -16,18 +16,19 @@
 
 package my.samples.controllers
 
-import akka.actor.{ Actor, ActorRef, PoisonPill, Props }
+import akka.actor.{Actor, ActorRef, PoisonPill, Props}
+import com.inland24.crud.models.MyMessages
 import com.typesafe.scalalogging.LazyLogging
 import monix.execution.Ack.Continue
 import monix.execution.cancelables.SingleAssignmentCancelable
-import monix.execution.{ Ack, Scheduler }
+import monix.execution.{Ack, Scheduler}
 import monix.reactive.observers.Subscriber
 import monix.reactive.subjects.ConcurrentSubject
-import my.samples.models.MyMessages
 import org.joda.time.DateTime
 import play.api.libs.json._
 
 import scala.concurrent.Future
+
 
 class MyWebSocketActor(producer: ConcurrentSubject[MyMessages, MyMessages], consumer: ActorRef)(implicit s: Scheduler) extends Actor with LazyLogging {
 

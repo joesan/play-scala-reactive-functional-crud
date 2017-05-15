@@ -14,13 +14,15 @@
  * limitations under the License.
  */
 
-package my.samples.controllers
+package com.inland24.crud.controllers
 
+import com.inland24.crud.core.AppBindings
+import my.samples.controllers.MyWebSocketActor
 import play.api.mvc._
-import my.samples.core.AppBindings
 import play.api.libs.json.JsValue
 import play.api.libs.streams.ActorFlow
 import play.api.mvc.WebSocket.MessageFlowTransformer
+
 
 final class MyApplicationController(bindings: AppBindings) extends Controller {
 

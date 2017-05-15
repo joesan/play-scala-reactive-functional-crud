@@ -14,18 +14,22 @@
  * limitations under the License.
  */
 
-package my.samples.core
+package com.inland24.crud.core
 
+import com.inland24.crud.controllers.MyApplicationController
 import com.typesafe.config.ConfigFactory
-import com.typesafe.scalalogging.{ LazyLogging, StrictLogging }
+import com.typesafe.scalalogging.{LazyLogging, StrictLogging}
 import controllers.Assets
-import play.api.{ Application, BuiltInComponentsFromContext, Configuration, _ }
+import play.api.{Application, BuiltInComponentsFromContext, Configuration, _}
 import play.api.libs.ws.ahc.AhcWSComponents
-import my.samples.controllers.MyApplicationController
 import play.api.ApplicationLoader.Context
+
+// these two imports below are needed for the routes resolution
 import play.api.routing.Router
 import router.Routes
+
 import scala.concurrent.Future
+
 
 // compile time DI for loading the play application
 final class MyApplicationLoader extends ApplicationLoader with LazyLogging {
