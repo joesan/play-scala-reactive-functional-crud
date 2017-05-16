@@ -47,7 +47,7 @@ class SupervisorActor(globalChannel: GlobalOutputChannel)(implicit s: Scheduler)
     val myObservable = MyObservable.apply
     val myConnectableObservable = MyConnectableObservable.apply(ZombieConnectorService.apply)
 
-    // 2. our Subscribers (Observers with a Scheduler)
+    // 2. our Subscribers (Subscribes are nothing but Observers with a Scheduler)
     val mySubscriber = MyObserver.apply(self, "hot-subscriber")
     val myConnectableSubscriber = MyObserver.apply(self, "cold-subscriber")
 
